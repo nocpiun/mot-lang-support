@@ -9,6 +9,9 @@
   "categories": [
     "Programming Languages"
   ],
+  "repository": {
+    "url": "https://github.com/nocpiun/mot-lang-support"
+  },
   "contributes": {
     "languages": [{
       "id": "mot",
