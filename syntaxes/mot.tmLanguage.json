@@ -1,0 +1,73 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Motive",
+	"patterns": [
+		{
+			"include": "#metadata"
+		},
+		{
+			"include": "#chunk"
+		},
+		{
+			"include": "#scope"
+		},
+		{
+			"include": "#property"
+		},
+		{
+			"include": "#statement"
+		}
+	],
+	"repository": {
+		"metadata": {
+			"begin": "^(#[[:alpha:]]+) (.+)",
+			"beginCaptures": {
+				"1": {
+					"name": "constant.character.escape.mot"
+				},
+				"2": {
+					"name": "markup.raw.mot"
+				}
+			},
+			"end": "\n"
+		},
+		"chunk": {
+			"name": "constant.character.escape.mot",
+			"begin": "@",
+			"end": " "
+		},
+		"scope": {
+			"match": "(\\b[[:alnum:]]+\\b) {",
+			"captures": {
+				"1": {
+					"name": "entity.name.class.mot"
+				}
+			}
+		},
+		"property": {
+			"begin": "([[:alpha:]]+:) ([[:alnum:]]+)",
+			"beginCaptures": {
+				"1": {
+					"name": "entity.name.tag.mot"
+				},
+				"2": {
+					"name": "string.quoted.mot"
+				}
+			},
+			"end": "\n"
+		},
+		"statement": {
+			"begin": "(delete) (.+)",
+			"beginCaptures": {
+				"1": {
+					"name": "support.function.mot"
+				},
+				"2": {
+					"name": "variable.name.mot"
+				}
+			},
+			"end": "\n"
+		}
+	},
+	"scopeName": "source.mot"
+}
