@@ -3,6 +3,7 @@
   "displayName": "Motive Language Support",
   "description": "Language highlighting extension for Motive (.mot) files",
   "version": "0.0.1",
+  "publisher": "nocpiun",
   "engines": {
     "vscode": "^1.95.0"
   },
